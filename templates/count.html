@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Count Words</title>
+</head>
+<body>
+    <h1>There are {{words}} words in this paragraph.</h1>
+    <p>{{fulltext}} </p>
+    <form action="{% url 'home' %}">
+        <input type="submit" value="Go back"/>
+    </form><br>
+    <form action="{% url 'about us' %}">
+            <input type="submit"  value="About Us"/>
+    </form>
+
+    <!-- <a href="{% url 'home' %}" style="text-decoration: none">Start Again</a> -->
+    <h3>Words with its occurence : </h3>
+    {% for item, counttotal in wordDictionary %}
+     {{item}} : {{counttotal}}<br>
+    {% endfor %}
+</body>
+</html>
